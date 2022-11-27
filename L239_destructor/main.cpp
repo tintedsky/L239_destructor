@@ -27,10 +27,25 @@ public:
     }
 };
 
+class DerivedClass: public Test
+{
+public:
+    DerivedClass()
+    {
+        cout<<"DeriveedClass"<<endl;
+    }
+    
+    ~DerivedClass()
+    {
+        cout<<"DerivedClass Destroyed"<<endl;
+    }
+};
+
 
 int main(int argc, const char * argv[]) {
     // insert code here...
     std::cout << "Hello, World!\n";
-    Test *p = new Test[3];
+    Test *p = new DerivedClass[2];
     delete []p;
+    
 }
