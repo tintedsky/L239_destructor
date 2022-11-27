@@ -6,9 +6,24 @@
 //
 
 #include <iostream>
+using namespace std;
+class Test
+{
+public:
+    Test()
+    {
+        cout<<"Constructor"<<endl;
+    }
+    ~Test()
+    {
+        cout<<"Destructor"<<endl;
+    }
+};
+
 
 int main(int argc, const char * argv[]) {
     // insert code here...
     std::cout << "Hello, World!\n";
-    return 0;
+    Test *p = new Test[3];
+    delete []p;
 }
