@@ -6,17 +6,24 @@
 //
 
 #include <iostream>
+#include <fstream>
 using namespace std;
 class Test
 {
+    int *p;
+    ifstream fi;
 public:
     Test()
     {
         cout<<"Constructor"<<endl;
+        p = new int[3];
+        fi.open("my.txt");
     }
     ~Test()
     {
         cout<<"Destructor"<<endl;
+        fi.close();
+        delete p;
     }
 };
 
