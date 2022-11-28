@@ -15,13 +15,13 @@ class Test
 public:
     Test()
     {
-        cout<<"Constructor"<<endl;
+        cout<<"Base Constructor"<<endl;
         p = new int[3];
         fi.open("my.txt");
     }
     ~Test()
     {
-        cout<<"Destructor"<<endl;
+        cout<<"Base Destructor"<<endl;
         fi.close();
         delete p;
     }
@@ -32,7 +32,7 @@ class DerivedClass: public Test
 public:
     DerivedClass()
     {
-        cout<<"DeriveedClass"<<endl;
+        cout<<"DeriveedClass Constructor"<<endl;
     }
     
     ~DerivedClass()
@@ -45,7 +45,5 @@ public:
 int main(int argc, const char * argv[]) {
     // insert code here...
     std::cout << "Hello, World!\n";
-    Test *p = new DerivedClass[2];
-    delete []p;
-    
+    DerivedClass d;
 }
