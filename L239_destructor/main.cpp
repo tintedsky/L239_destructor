@@ -19,7 +19,7 @@ public:
         p = new int[3];
         fi.open("my.txt");
     }
-    ~Test()
+    virtual ~Test()
     {
         cout<<"Base Destructor"<<endl;
         fi.close();
@@ -35,7 +35,7 @@ public:
         cout<<"DeriveedClass Constructor"<<endl;
     }
     
-    ~DerivedClass()
+    virtual ~DerivedClass()
     {
         cout<<"DerivedClass Destroyed"<<endl;
     }
@@ -45,5 +45,6 @@ public:
 int main(int argc, const char * argv[]) {
     // insert code here...
     std::cout << "Hello, World!\n";
-    DerivedClass d;
+    Test *p = new DerivedClass;
+    delete p;
 }
